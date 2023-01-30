@@ -1,6 +1,10 @@
 name: Java CI with Gradle
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ TestNG ]
+  pull_request:
+    branches: [ TestNG ]
 
 jobs:
   build:
@@ -17,4 +21,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew test
+        run: ./gradlew test --info
